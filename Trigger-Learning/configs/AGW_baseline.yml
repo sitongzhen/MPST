@@ -1,0 +1,55 @@
+MODEL:
+  PRETRAIN_CHOICE: 'imagenet'
+  PRETRAIN_PATH: '/mnt/data/pre_model/resnet50-19c8e357.pth'
+  CENTER_LOSS: 'off'
+  CENTER_FEAT_DIM: 2048
+  NAME: 'resnet50_nl'
+  WEIGHT_REGULARIZED_TRIPLET: 'off'
+  GENERALIZED_MEAN_POOL: 'on'
+
+INPUT:
+  IMG_SIZE: [256, 128]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+
+DATASETS:
+  NAMES: ('market')
+
+DATALOADER:
+  PK_SAMPLER: 'on'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+
+SOLVER:
+  OPTIMIZER_NAME: 'Adam'
+  MAX_EPOCHS: 120
+  BASE_LR: 0.00035
+
+  CENTER_LR: 0.5
+  CENTER_LOSS_WEIGHT: 0.005
+
+  WEIGHT_DECAY: 0.0005
+  IMS_PER_BATCH: 64
+
+  STEPS: [40, 70]
+  GAMMA: 0.1
+
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: 'linear'
+
+  CHECKPOINT_PERIOD: 20
+  LOG_PERIOD: 20
+  EVAL_PERIOD: 10
+
+TEST:
+  IMS_PER_BATCH: 1
+  RE_RANKING: 'off'
+  WEIGHT: "../tools/log/market1501/Experiment-AGW-baseline/resnet50_nl_model_120.pth"
+  FEAT_NORM: 'off'
+  EVALUATE_ONLY: 'off'
+
+OUTPUT_DIR: "./log/market1501/Experiment-AGW-baseline"
+
+
