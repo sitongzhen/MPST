@@ -7,15 +7,14 @@
 # The first step:
    Generating triggers using Trigger-Learning
    
-   We learn the trigger based on the trained model (AGW). You can directly re-run train.py from https://github.com/mangye16/ReID-Survey.
-   Reloading the trained model, and then run train.py to generate the trigger. 
+   We learn the trigger based on the trained model (AGW). You can directly re-run tools/main.py from https://github.com/mangye16/ReID-Survey.
+   Reloading the trained model, and then run tools/main.py to generate the trigger. 
    
 
 
 # The second step
    Training model using MPST-based-TransReID
+   We re-train our model based on TransReID(ttps://github.com/damo-cv/TransReID).
+   Reload the generated trigger, and then run train.py to generate the trigger. 
+   You can easily re-train other models to protect pedestrian privacy by a similar way.
 
-
-# Acknowledgments
-
-Our code is also inspired by https://github.com/FlyingRoastDuck/MetaAttack_AAAI21, and https://github.com/damo-cv/TransReID.
