@@ -7,7 +7,7 @@
 # The first step:
    Generating triggers using Trigger-Learning
    
-   We learn the trigger based on the trained model (AGW). You can directly re-run tools/main.py from https://github.com/mangye16/ReID-Survey (Refer to its running Settings).
+   We learn the trigger based on the trained model (AGW). You can directly re-run tools/main.py from https://github.com/mangye16/ReID-Survey (Refer to its running Settings) to obtain the trained model.
    
    Reloading the trained model, and then running tools/main.py to generate the trigger. 
    
@@ -16,7 +16,7 @@
 # The second step
    Training model using MPST-based-TransReID
    
-   We re-train our model based on TransReID: https://github.com/damo-cv/TransReID(Refer to its running Settings).
+   We re-train our model based on TransReID: https://github.com/damo-cv/TransReID (Refer to its running Settings).
    
    Reload the generated trigger, and then run train.py to generate the trigger. 
    
